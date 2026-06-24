@@ -1,5 +1,6 @@
 /**
  * FizzBuzz
+ * 
  * Diberikan sebuah bilangan bulat n, kembalikan sebuah array string answer( berindeks 1 ) di mana :
  * answer[i] == "FizzBuzz"jika ihabis dibagi oleh 3dan 5.
  * answer[i] == "Fizz"jika ihabis dibagi 3.
