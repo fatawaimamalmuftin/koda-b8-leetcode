@@ -24,5 +24,9 @@
  * @return {number}
  */
 var lengthOfLastWord = function(s) {
-    
+    const kata =[s]   
+    console.log(kata)
 };
+lengthOfLastWord("Hello World")
+lengthOfLastWord("terbangkan aku ke bulan")
+lengthOfLastWord("luffy masih joyboy")
