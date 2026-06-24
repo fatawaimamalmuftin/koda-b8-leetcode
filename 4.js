@@ -25,9 +25,12 @@
  * @return {number}
  */
 var lengthOfLastWord = function(s) {
-    const kata =[s]   
-    console.log(kata)
+    const text = s.trim()
+    const kata = text.split(" ");     
+    const kataTerahir = kata[kata.length - 1]
+    return console.log(kataTerahir.length)
 };
+
 lengthOfLastWord("Hello World")
-lengthOfLastWord("terbangkan aku ke bulan")
-lengthOfLastWord("luffy masih joyboy")
+lengthOfLastWord("fly me   to   the moon")
+lengthOfLastWord("luffy is still joyboy")
