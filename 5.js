@@ -43,16 +43,16 @@ var isValid = function(s) {
         if(n === '(' || n === '{' || n === '['){
             stact.push(n)
         }else{
-            if(stact.length === 0) return console.log(false);
+            if(stact.length === 0) return false;
             let open = stact.at(-1)
             if(open === '(' && n === ')' || open === '{' && n === '}' || open === '[' && n === ']'){
                 stact.pop()
             }else{
-                return console.log(false);
+                return false;
             }
         }
     }
-    if(stact.length === 0)return console.log(true);
+    return stact.length === 0;
 }
 isValid("()")
 isValid("()[]{}")
