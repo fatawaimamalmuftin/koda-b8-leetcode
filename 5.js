@@ -40,23 +40,19 @@ var isValid = function(s) {
     const stact = []
 
     for (const n of s) {
-        stact.push(n)
-        if(stact[stact.length -2] === "(" && stact[stact.length -1] === ")"){
-            stact.pop()
-            stact.pop()
-        }else if(stact[stact.length -2] === "{" && stact[stact.length -1] === "}"){
-            stact.pop()
-            stact.pop()
-        }else if(stact[stact.length -2] === "[" && stact[stact.length -1] === "]"){
-            stact.pop()
-            stact.pop()
+        if(n === '(' || n === '{' || n === '['){
+            stact.push(n)
+        }else{
+            if(stact.length === 0) return console.log(false);
+            let open = stact.at(-1)
+            if(open === '(' && n === ')' || open === '{' && n === '}' || open === '[' && n === ']'){
+                stact.pop()
+            }else{
+                return console.log(false);
+            }
         }
     }
-    if(stact.length === 0){
-        return console.log(true)
-    }else{
-        return console.log(false)
-    }
+    if(stact.length === 0)return console.log(true);
 }
 isValid("()")
 isValid("()[]{}")
