@@ -1,8 +1,8 @@
 /**
  * Menghapus Duplikat dari Array yang Sudah Diurutkan
  * 
- * Diberikan sebuah array bilangan bulat numsyang diurutkan dalam urutan tidak menurun , hapus duplikatnya di tempat sehingga setiap elemen unik hanya muncul sekali . Urutan relatif elemen harus tetap sama .
- * Misalkan jumlah elemen unik dalam  numsadalah ​​​​​​​. Setelah menghapus duplikat, kembalikan jumlah elemen unik  .k​​​​​​​k
+ * Diberikan sebuah array bilangan bulat nums yang diurutkan dalam urutan tidak menurun , hapus duplikatnya di tempat sehingga setiap elemen unik hanya muncul sekali . Urutan relatif elemen harus tetap sama .
+ * Misalkan jumlah elemen unik dalam  numsadalah. Setelah menghapus duplikat, kembalikan jumlah elemen unik  .kk
  * Elemen pertama  k dari  nums harus berisi angka unik dalam urutan terurut . Elemen yang tersisa setelah indeks  k - 1 dapat diabaikan.
  * Hakim Khusus:
  * Juri akan menguji solusi Anda dengan kode berikut:
@@ -36,6 +36,17 @@
  * @param {number[]} nums
  * @return {number}
  */
-var removeDuplicates = function(nums) {
-    
+var removeDuplicates = function (nums) {
+    let k = 1;
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] !== nums[i - 1]) {
+            nums[k] = nums[i];
+            k++;
+        }
+    }
+    console.log(nums);
+    console.log(k);
 };
+
+removeDuplicates([1, 1, 2])
+removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4])
