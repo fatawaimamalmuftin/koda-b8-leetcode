@@ -24,37 +24,23 @@
  * @return {number}
  */
 var reverse = function (x) {
+    let angka = Math.abs(x);
 
-    // Cek apakah angka negatif
-    let negatif = false;
-
-    if (x < 0) {
-        negatif = true;
-        x = Math.abs(x);
-    }
-
-    // Balik angka
     let hasil = Number(
-        String(x)
+        String(angka)
             .split("")
             .reverse()
             .join("")
     );
 
-    // Kembalikan tanda minus
-    if (negatif) {
+    if (x < 0) {
         hasil = -hasil;
     }
+    // batas 32bit
+    const batasBawah = -(2 ** 31);
+    const batasAtas = (2 ** 31) - 1;
 
-    // Batas integer 32-bit
-    let batasBawah = -(2 ** 31);
-    let batasAtas = (2 ** 31) - 1;
-
-    if (hasil < batasBawah) {
-        return 0;
-    }
-
-    if (hasil > batasAtas) {
+    if (hasil < batasBawah || hasil > batasAtas) {
         return 0;
     }
 
